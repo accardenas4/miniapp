@@ -7,10 +7,12 @@ import 'bootstrap/dist/css/bootstrap.min.css'; // Importar Bootstrap
 const App = () => {
   return (
     <Router>
-      <Routes>
-        <Route path="/" element={<Formulario />} />
-        <Route path="/servicios" element={<Servicios />} />
-      </Routes>
+      <div className="App">
+        <Routes>
+          <Route path="/miniapp" element={<Formulario />} />
+          <Route path="/servicios" element={<Servicios />} />
+        </Routes>
+      </div>
     </Router>
   );
 };
