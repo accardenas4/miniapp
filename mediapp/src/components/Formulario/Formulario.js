@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './Formulario.css'; // Estilos personalizados si los necesitas
+import 'bootstrap/dist/css/bootstrap.min.css'; // Importa Bootstrap (ya está en App.js, pero es bueno verificarlo)
 
 const Formulario = () => {
   const [name, setName] = useState('');
@@ -8,35 +8,23 @@ const Formulario = () => {
 
   useEffect(() => {
     // Verifica que Telegram y Telegram.WebApp están definidos
-    const checkTelegramSDK = () => {
-      if (window.Telegram && window.Telegram.WebApp) {
-        const { WebApp } = window.Telegram;
+    if (window.Telegram && window.Telegram.WebApp) {
+      const { WebApp } = window.Telegram;
 
-        // Inicializa el WebApp
-        WebApp.ready();
+      // Inicializa el WebApp
+      WebApp.ready();
 
-        // Configura el botón principal
-        WebApp.MainButton.setText('Submit');
-        WebApp.MainButton.show();
+      // Configura el botón principal
+      WebApp.MainButton.setText('Submit');
+      WebApp.MainButton.show();
 
-        // Define la acción al hacer clic en el botón principal
-        WebApp.MainButton.onClick(() => {
-          WebApp.close();
-        });
-      } else {
-        console.error('Telegram WebApp SDK no está disponible');
-      }
-    };
-
-    // Espera a que el SDK esté disponible
-    const interval = setInterval(() => {
-      if (window.Telegram && window.Telegram.WebApp) {
-        clearInterval(interval);
-        checkTelegramSDK();
-      }
-    }, 100);
-
-    return () => clearInterval(interval);
+      // Define la acción al hacer clic en el botón principal
+      WebApp.MainButton.onClick(() => {
+        WebApp.close();
+      });
+    } else {
+      console.error('Telegram WebApp SDK no está disponible');
+    }
   }, []);
 
   const handleSubmit = (event) => {
@@ -52,10 +40,10 @@ const Formulario = () => {
 
   return (
     <div className="container mt-5">
-      <h1 className="mb-4">Formulario</h1>
+      <h1 className="text-center mb-4">Telegram Web App Form</h1>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
-          <label htmlFor="name">Nombres:</label>
+          <label htmlFor="name">Name:</label>
           <input
             id="name"
             type="text"
@@ -65,8 +53,8 @@ const Formulario = () => {
             required
           />
         </div>
-        <div className="form-group mt-3">
-          <label htmlFor="surname">Apellidos:</label>
+        <div className="form-group">
+          <label htmlFor="surname">Surname:</label>
           <input
             id="surname"
             type="text"
@@ -76,8 +64,8 @@ const Formulario = () => {
             required
           />
         </div>
-        <div className="form-group mt-3">
-          <label htmlFor="age">Edad:</label>
+        <div className="form-group">
+          <label htmlFor="age">Age:</label>
           <input
             id="age"
             type="number"
@@ -87,7 +75,9 @@ const Formulario = () => {
             required
           />
         </div>
-        <button type="submit" className="btn btn-primary mt-3">Enviar</button>
+        <button type="submit" className="btn btn-primary btn-block mt-3">
+          Submit
+        </button>
       </form>
     </div>
   );
