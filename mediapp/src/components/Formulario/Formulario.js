@@ -1,10 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css'; // Importa Bootstrap (ya está en App.js, pero es bueno verificarlo)
+import  './Formulario.css'
 
 const Formulario = () => {
   const [name, setName] = useState('');
   const [surname, setSurname] = useState('');
   const [age, setAge] = useState('');
+  const [selectedStore, setSelectedStore] = useState('');
+
+  // Manejar el cambio en la selección
+  const handleChange = (event) => {
+    setSelectedStore(event.target.value);
+  };
 
   useEffect(() => {
     // Verifica que Telegram y Telegram.WebApp están definidos
@@ -15,7 +22,7 @@ const Formulario = () => {
       WebApp.ready();
 
       // Configura el botón principal
-      WebApp.MainButton.setText('Submit');
+      WebApp.MainButton.setText('Registrarme');
       WebApp.MainButton.show();
 
       // Define la acción al hacer clic en el botón principal
@@ -43,10 +50,11 @@ const Formulario = () => {
 
   return (
     <div className="container mt-5">
-      <h1 className="text-center mb-4">Telegram Web App Form</h1>
+      <h2 className="text-center mb-4">MediHelp</h2>
+      <p>Servicios medicos centralizados</p>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
-          <label htmlFor="name">Name:</label>
+          <label className="form-label-bold" htmlFor="name">Nombres:</label>
           <input
             id="name"
             type="text"
@@ -57,7 +65,7 @@ const Formulario = () => {
           />
         </div>
         <div className="form-group">
-          <label htmlFor="surname">Surname:</label>
+          <label className="form-label-bold" htmlFor="surname">Apellidos:</label>
           <input
             id="surname"
             type="text"
@@ -68,7 +76,19 @@ const Formulario = () => {
           />
         </div>
         <div className="form-group">
-          <label htmlFor="age">Age:</label>
+        <label className="form-label-bold" htmlFor="storeSelect">Localidad</label>
+        <select
+            id="storeSelect"
+            className="form-control"
+            value={selectedStore}
+            onChange={handleChange}
+          >
+            <option value="">Seleccione...</option>
+            <option value="store1">Loja</option>
+          </select>
+      </div>
+        <div className="form-group">
+          <label className="form-label-bold"  htmlFor="age">Edad:</label>
           <input
             id="age"
             type="number"
@@ -78,10 +98,13 @@ const Formulario = () => {
             required
           />
         </div>
-        <button type="submit" className="btn btn-primary btn-block mt-3">
-          Submit
-        </button>
+        
       </form>
+      <div class="alert alert-success" role="alert">
+  Revisa nuestras Politicas de privacidad!       <button type="button" class="btn btn-link">Politica de provacidad</button>
+
+</div>
+
     </div>
   );
 };
