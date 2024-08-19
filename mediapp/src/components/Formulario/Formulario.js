@@ -36,6 +36,9 @@ const Formulario = () => {
       WebApp.MainButton.setText('Submitted');
       WebApp.MainButton.show();
     }
+
+    // Redirige a la página de servicios
+    window.location.href = '/servicios';
   };
 
   return (

@@ -1,12 +1,17 @@
 import React from 'react';
-import Formulario from './components/Formulario/Formulario'; // Asegúrate de que la ruta sea correcta
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Formulario from './components/Formulario/Formulario';
+import Servicios from './components/Servicios/Servicios';
 import 'bootstrap/dist/css/bootstrap.min.css'; // Importar Bootstrap
 
 const App = () => {
   return (
-    <div className="App">
-      <Formulario />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Formulario />} />
+        <Route path="/servicios" element={<Servicios />} />
+      </Routes>
+    </Router>
   );
 };
 
