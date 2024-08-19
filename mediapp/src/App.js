@@ -42,7 +42,7 @@ const App = () => {
       <h1>Telegram Web App Form</h1>
       <form onSubmit={handleSubmit}>
         <div>
-          <label htmlFor="name">Name:</label>
+          <label htmlFor="name">Nombres:</label>
           <input
             id="name"
             type="text"
@@ -52,7 +52,7 @@ const App = () => {
           />
         </div>
         <div>
-          <label htmlFor="surname">Surname:</label>
+          <label htmlFor="surname">Apellidos:</label>
           <input
             id="surname"
             type="text"
