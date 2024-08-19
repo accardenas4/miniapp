@@ -38,7 +38,7 @@ const Formulario = () => {
     }
 
     // Redirige a la página de servicios
-    window.location.href = '/servicios';
+    window.location.href = '/miniapp/servicios';
   };
 
   return (
