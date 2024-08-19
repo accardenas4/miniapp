@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const App = () => {
   const [name, setName] = useState('');
@@ -38,40 +39,42 @@ const App = () => {
   };
 
   return (
-    <div>
-      <h1>Telegram Web App Form</h1>
+    <div className="container mt-5">
       <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="name">Nombres:</label>
+        <div className="mb-3">
+          <label htmlFor="name" className="form-label">Nombres:</label>
           <input
             id="name"
             type="text"
             value={name}
             onChange={(e) => setName(e.target.value)}
+            className="form-control"
             required
           />
         </div>
-        <div>
-          <label htmlFor="surname">Apellidos:</label>
+        <div className="mb-3">
+          <label htmlFor="surname" className="form-label">Apellidos:</label>
           <input
             id="surname"
             type="text"
             value={surname}
             onChange={(e) => setSurname(e.target.value)}
+            className="form-control"
             required
           />
         </div>
-        <div>
-          <label htmlFor="age">Age:</label>
+        <div className="mb-3">
+          <label htmlFor="age" className="form-label">Edad:</label>
           <input
             id="age"
             type="number"
             value={age}
             onChange={(e) => setAge(e.target.value)}
+            className="form-control"
             required
           />
         </div>
-        <button type="submit">Submit</button>
+        <button type="submit" className="btn btn-primary w-100">Enviar</button>
       </form>
     </div>
   );
