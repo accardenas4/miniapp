@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css'; // Importa Bootstrap (ya está en App.js, pero es bueno verificarlo)
 import './Formulario.css';
 
@@ -8,7 +7,6 @@ const Formulario = () => {
   const [surname, setSurname] = useState('');
   const [age, setAge] = useState('');
   const [selectedStore, setSelectedStore] = useState('');
-  const navigate = useNavigate(); // Obtén la función de navegación
 
   // Manejar el cambio en la selección
   const handleChange = (event) => {
@@ -42,7 +40,7 @@ const Formulario = () => {
     console.log('Form Data:', { name, surname, age });
 
     // Redirige a la página de servicios después de enviar el formulario
-    navigate('/miniapp/servicios'); // Usa navigate en lugar de window.location.href
+    window.location.href = '/miniapp/servicios'; // Cambia esta URL a la URL correcta de tu página de servicios
 
     if (window.Telegram && window.Telegram.WebApp) {
       const { WebApp } = window.Telegram;
@@ -53,7 +51,7 @@ const Formulario = () => {
 
   return (
     <div className="container mt-5">
-      <p>Explora un espacio centralizado para todos tus servicios médicos, fácil y al alcance de tu mano.</p>
+      <p>Explora un espacio centralizado para todos tus servicios médicos, fácil y al alcance de tu mano.v5</p>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label className="form-label-bold" htmlFor="name">Nombres:</label>
