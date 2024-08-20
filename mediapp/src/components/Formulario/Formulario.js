@@ -52,58 +52,42 @@ const Formulario = () => {
 
   return (
     <div className="container mt-5">
-            <div class="text-center">
-            <img src={exampleImage} alt="Example" className="img-fluid mb-4" /> {/* Agrega la imagen */}
-</div>
-      <p>Explora un espacio centralizado para todos tus servicios médicos, fácil y al alcance de tu mano.v</p>
-      <form onSubmit={handleSubmit}>
-        <div className="form-group">
-          <label className="form-label-bold" htmlFor="name">Nombres:</label>
-          <input
-            id="name"
-            type="text"
-            className="form-control"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            required
-          />
+
+      <section class="bg-light py-3 py-md-5">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-5 col-xxl-4">
+              <div class="card border border-light-subtle rounded-3 shadow-sm">
+                <div class="card-body p-3 p-md-4 p-xl-5">
+                  <div class="text-center mb-3">
+                    <a href="#!">
+                      <img src={exampleImage} alt="Example" className="img-fluid mb-4" /> {/* Agrega la imagen */}
+                    </a>
+                  </div>
+                  <h2 class="fs-6 fw-normal text-center text-secondary mb-4">Completa la información</h2>
+                  <form action="#!">
+                    <div class="row gy-2 overflow-hidden">
+                      <div class="col-12">
+                        <div class="form-floating mb-3">
+                          <input type="text" class="form-control" name="Nombres" id="nombres" required />
+                          <label for="email" class="form-label">Cédula de identidad</label>
+                        </div>
+                      </div>
+                      <div class="col-12">
+                        <div class="d-grid my-3">
+                          <button class="btn btn-primary btn-lg" type="submit">Registrarme</button>
+                        </div>
+                      </div>
+
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div className="form-group">
-          <label className="form-label-bold" htmlFor="surname">Apellidos:</label>
-          <input
-            id="surname"
-            type="text"
-            className="form-control"
-            value={surname}
-            onChange={(e) => setSurname(e.target.value)}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <label className="form-label-bold" htmlFor="storeSelect">Localidad</label>
-          <select
-            id="storeSelect"
-            className="form-control"
-            value={selectedStore}
-            onChange={handleChange}
-          >
-            <option value="">Seleccione...</option>
-            <option value="store1">Loja</option>
-          </select>
-        </div>
-        <div className="form-group">
-          <label className="form-label-bold" htmlFor="age">Edad:</label>
-          <input
-            id="age"
-            type="number"
-            className="form-control"
-            value={age}
-            onChange={(e) => setAge(e.target.value)}
-            required
-          />
-        </div>
-        <button type="submit" className="btn btn-primary">Enviar</button>
-      </form>
+      </section>
+
       <div className="alert alert-success mt-3" role="alert">
         Revisa nuestras Políticas de privacidad!
         <button type="button" className="btn btn-link">Política de privacidad</button>
