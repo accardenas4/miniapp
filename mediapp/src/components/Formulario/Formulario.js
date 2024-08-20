@@ -51,7 +51,7 @@ const Formulario = () => {
 
   return (
     <div className="container mt-5">
-      <p>Explora un espacio centralizado para todos tus servicios médicos, fácil y al alcance de tu mano.v3</p>
+      <p>Explora un espacio centralizado para todos tus servicios médicos, fácil y al alcance de tu mano.v5</p>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label className="form-label-bold" htmlFor="name">Nombres:</label>
