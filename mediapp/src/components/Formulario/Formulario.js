@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css'; // Importa Bootstrap (ya está en App.js, pero es bueno verificarlo)
 import './Formulario.css';
+import exampleImage from '../../assets/bot-conversacional.png'; // Importa la imagen
 
 const Formulario = () => {
   const [name, setName] = useState('');
@@ -51,6 +52,9 @@ const Formulario = () => {
 
   return (
     <div className="container mt-5">
+            <div class="text-center">
+            <img src={exampleImage} alt="Example" className="img-fluid mb-4" /> {/* Agrega la imagen */}
+</div>
       <p>Explora un espacio centralizado para todos tus servicios médicos, fácil y al alcance de tu mano.v</p>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
