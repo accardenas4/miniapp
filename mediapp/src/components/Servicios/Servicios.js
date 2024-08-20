@@ -25,38 +25,26 @@ const Servicios = () => {
   }, []);
 
   return (
-    <div className="container mt-5">
-      <h1 className="text-center mb-4">Servicios</h1>
-      <div className="row">
-        <div className="col-md-4 mb-4">
-          <div className="card">
-            <div className="card-body">
-              <h5 className="card-title">Doctores</h5>
-              <p className="card-text">Encuentra doctores especialistas en diversas áreas.</p>
-              <button className="btn btn-primary">Ver más</button>
-            </div>
-          </div>
-        </div>
-        <div className="col-md-4 mb-4">
-          <div className="card">
-            <div className="card-body">
-              <h5 className="card-title">Farmacias</h5>
-              <p className="card-text">Encuentra farmacias cercanas a tu ubicación.</p>
-              <button className="btn btn-primary">Ver más</button>
-            </div>
-          </div>
-        </div>
-        <div className="col-md-4 mb-4">
-          <div className="card">
-            <div className="card-body">
-              <h5 className="card-title">Hospitales</h5>
-              <p className="card-text">Consulta la lista de hospitales disponibles en tu área.</p>
-              <button className="btn btn-primary">Ver más</button>
-            </div>
-          </div>
-        </div>
+    <div class="row">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Special title treatment</h5>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
       </div>
     </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Special title treatment</h5>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+  </div>
+</div>
   );
 };
 

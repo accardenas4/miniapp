@@ -9,8 +9,8 @@ const App = () => {
     <Router>
       <div className="App">
         <Routes>
-          <Route path="/" element={<Formulario />} />
-          <Route path="/miniapp/servicios" element={<Servicios />} />
+          <Route path="/miniapp/servicios" element={<Formulario />} />
+          <Route path="/" element={<Servicios />} />
         </Routes>
       </div>
     </Router>
@@ -18,3 +18,5 @@ const App = () => {
 };
 
 export default App;
+
+
