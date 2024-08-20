@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css'; // Importa Bootstrap (ya está en App.js, pero es bueno verificarlo)
-import  './Formulario.css'
+import './Formulario.css';
 
 const Formulario = () => {
   const [name, setName] = useState('');
@@ -38,17 +38,20 @@ const Formulario = () => {
     event.preventDefault();
     // Aquí puedes manejar el envío de los datos, por ejemplo, enviarlos a un servidor
     console.log('Form Data:', { name, surname, age });
+
+    // Redirige a la página de servicios después de enviar el formulario
+    window.location.href = '/miniapp/servicios'; // Cambia esta URL a la URL correcta de tu página de servicios
+
     if (window.Telegram && window.Telegram.WebApp) {
       const { WebApp } = window.Telegram;
       WebApp.MainButton.setText('Registrarme');
       WebApp.MainButton.show();
     }
-
   };
 
   return (
     <div className="container mt-5">
-      <p>Explora un espacio centralizado para todos tus servicios médicos, fácil y al alcance de tu mano.</p>
+      <p>Explora un espacio centralizado para todos tus servicios médicos, fácil y al alcance de tu mano.v3</p>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label className="form-label-bold" htmlFor="name">Nombres:</label>
@@ -73,8 +76,8 @@ const Formulario = () => {
           />
         </div>
         <div className="form-group">
-        <label className="form-label-bold" htmlFor="storeSelect">Localidad</label>
-        <select
+          <label className="form-label-bold" htmlFor="storeSelect">Localidad</label>
+          <select
             id="storeSelect"
             className="form-control"
             value={selectedStore}
@@ -83,9 +86,9 @@ const Formulario = () => {
             <option value="">Seleccione...</option>
             <option value="store1">Loja</option>
           </select>
-      </div>
+        </div>
         <div className="form-group">
-          <label className="form-label-bold"  htmlFor="age">Edad:</label>
+          <label className="form-label-bold" htmlFor="age">Edad:</label>
           <input
             id="age"
             type="number"
@@ -95,13 +98,12 @@ const Formulario = () => {
             required
           />
         </div>
-        
+        <button type="submit" className="btn btn-primary">Enviar</button>
       </form>
-      <div class="alert alert-success" role="alert">
-  Revisa nuestras Politicas de privacidad!       <button type="button" class="btn btn-link">Politica de provacidad</button>
-
-</div>
-
+      <div className="alert alert-success mt-3" role="alert">
+        Revisa nuestras Políticas de privacidad!
+        <button type="button" className="btn btn-link">Política de privacidad</button>
+      </div>
     </div>
   );
 };
