@@ -40,18 +40,15 @@ const Formulario = () => {
     console.log('Form Data:', { name, surname, age });
     if (window.Telegram && window.Telegram.WebApp) {
       const { WebApp } = window.Telegram;
-      WebApp.MainButton.setText('Submitted');
+      WebApp.MainButton.setText('Registrarme');
       WebApp.MainButton.show();
     }
 
-    // Redirige a la página de servicios
-    window.location.href = '/miniapp/servicios';
   };
 
   return (
     <div className="container mt-5">
-      <h2 className="text-center mb-4">MediHelp</h2>
-      <p>Servicios medicos centralizados</p>
+      <p>Explora un espacio centralizado para todos tus servicios médicos, fácil y al alcance de tu mano.</p>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label className="form-label-bold" htmlFor="name">Nombres:</label>
